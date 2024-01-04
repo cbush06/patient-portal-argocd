@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: patientportal
+spec:
+  template:
+    spec:
+      containers:
+        - name: patientportal
+          # Replace the blank with your Docker Hub username
+          image: docker.io/cbush06/patient-portal:v1.0.0-RC
+          imagePullPolicy: IfNotPresent
