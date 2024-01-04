@@ -4,6 +4,6 @@ metadata:
   name: patientportal
 spec:
   ports:
-  # Serve the dev environment at http://localhost:8888
+  # Serve the dev environment at http://localhost:8989
   - port: 8989
     targetPort: 8080

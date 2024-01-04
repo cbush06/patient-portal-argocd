@@ -1,0 +1,9 @@
+data:
+  log.level: debug
+  registries.conf: |
+    registries:
+    - name: Docker Hub
+      insecure: yes
+      api_url: https://registry-1.docker.io
+      prefix: docker.io
+      defaultns: library

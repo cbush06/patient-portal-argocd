@@ -5,7 +5,8 @@ metadata:
   namespace: argocd
   annotations:
     argocd-image-updater.argoproj.io/image-list: devpatientportalalias=docker.io/cbush06/patient-portal:latest
-    argocd-image-updater.argoproj.io/devpatientportalalias.update-strategy: digest
+    argocd-image-updater.argoproj.io/testpatientportalalias.update-strategy: latest
+    argocd-image-updater.argoproj.io/testpatientportalalias.allow-tags: regexp:^sha-.*$
 spec:
   destination:
     name: ''
