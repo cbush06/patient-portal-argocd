@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: patient-portal-test
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: testpatientportalalias=docker.io/cbush06/patient-portal
+    argocd-image-updater.argoproj.io/testpatientportalalias.update-strategy: latest
+    argocd-image-updater.argoproj.io/testpatientportalalias.allow-tags: regexp:^v\d.\d.\d-RC$
+spec:
+  destination:
+    name: ''
+    namespace: test
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: overlays/test
+    repoURL: 'git@github.com:cbush06/patient-portal-argocd.git'
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
