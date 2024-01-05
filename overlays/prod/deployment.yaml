@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: patientportal
 spec:
+  replicas: 6
   template:
     spec:
       containers:
